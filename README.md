@@ -85,7 +85,7 @@ df
 ```
 ![dropna](https://github.com/user-attachments/assets/23b194fe-fc59-4156-884e-3f59757d8445)
 
-###r REMOVING OUTLIERS USING IQR 
+### REMOVING OUTLIERS USING IQR 
 ```
 import seaborn as sns
 pf=pd.read_csv('heights.csv')
@@ -118,9 +118,22 @@ print("Outliers:\n", outliers)
 ```
 ![image](https://github.com/user-attachments/assets/29036b0e-3e88-4a52-9e7c-f3d4d5f38da3)
 
+```
+no_outliers = pf[~((pf['height'] < LB) | (pf['height'] > UB))]
+print(no_outliers)
+```
+![image](https://github.com/user-attachments/assets/1a0ca7ed-d78d-4410-95c2-2413e60c6e30)
 
+```
+sns.boxplot(data=no_outliers)
+```
 
+![image](https://github.com/user-attachments/assets/5dbe39ef-f3b5-42f1-abbf-760b83669699)
 
+```
+sns.scatterplot(data=no_outliers)
+```
+![image](https://github.com/user-attachments/assets/048c781b-ba2e-4dd9-ae5a-02984be4fe8e)
 
 
 
