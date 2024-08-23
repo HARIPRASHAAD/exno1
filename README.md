@@ -135,8 +135,41 @@ sns.scatterplot(data=no_outliers)
 ```
 ![image](https://github.com/user-attachments/assets/048c781b-ba2e-4dd9-ae5a-02984be4fe8e)
 
+### REMOVING OUTLIERS OF THE SAME DATA USING Z SCORE
+```
+import matplotlib.pyplot as plt
+import scipy.stats as stats
+pf
+```
+![Screenshot (165)](https://github.com/user-attachments/assets/465cf710-a8bb-4f75-913d-9cfbd685250e)
 
+```
+q1=pf['height'].quantile(0.25)
+q2=pf['height'].quantile(0.5)
+q3=pf['height'].quantile(0.75)
+
+iqr=q3-q1
+low= q1-1.5*iqr
+high=q3+1.5*iqr
+
+pf1=pf[((pf['height'] >= low) & (pf['height'] <= high))]
+pf1
+```
+![image](https://github.com/user-attachments/assets/e14dc240-c6f4-4030-a3e1-be684893aa81)
+
+```
+z=np.abs(stats.zscore(pf['height']))
+z
+```
+![image](https://github.com/user-attachments/assets/81c1e955-6334-4de1-a909-4dc056277dff)
+
+```
+pf1 = pf[z<3]
+pf1
+```
+![image](https://github.com/user-attachments/assets/e14dc240-c6f4-4030-a3e1-be684893aa81)
 
 
 # Result
-          <<include your Result here>>
+Thus we have cleaned the data and removed the outliers by detection using IQR and Z-score method
+         
