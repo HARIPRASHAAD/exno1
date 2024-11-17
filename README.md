@@ -1,6 +1,9 @@
 # Exno:1
 Data Cleaning Process
 
+### REGISTER NO: 212223040060
+### DATE: 19.8.2024
+
 # AIM
 To read the given data and perform data cleaning and save the cleaned data to a file.
 
